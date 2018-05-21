@@ -1,0 +1,22 @@
+<title>
+    {% if page %}
+        {% if page.meta_title %}
+            {{ page.meta_title|safe }}
+        {% else %}
+            {{ page.title }}
+        {% endif %}
+    {% else %}
+
+    {% endif %}
+</title>
+<meta name="keywords" content="
+      {% if page.meta_keywords %}
+        {{ page.meta_keywords }}
+      {% endif %}
+    ">
+<meta name="description" content="
+      {% if page.meta_description %}
+        {{ page.meta_description }}
+      {% endif %}
+    ">
+{{ page.meta_tags|safe }}

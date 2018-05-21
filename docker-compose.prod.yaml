@@ -1,0 +1,31 @@
+version: '2'
+services:
+  db:
+    restart: always
+  backend:
+    command: uwsgi /opt/{{ project_name }}/uwsgi.ini
+    restart: always
+    environment:
+      - DB_USER={{ project_name }}_user
+      - DB_PASSWORD={{ project_name }}_pass
+      - DB_HOST=db
+      - VIRTUAL_PROTO=uwsgi
+      - SITE_URL=SET_YOUR_DOMAIN
+      - ALLOWED_HOSTS=SET_YOUR_DOMAIN
+      - VIRTUAL_HOST=SET_YOUR_DOMAIN
+      - IS_PRODUCTION=1
+  nginx-proxy:
+    restart: always
+    image: jwilder/nginx-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+volumes:
+  db-data:
+  media:
+  staticfiles:
+

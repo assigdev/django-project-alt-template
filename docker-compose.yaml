@@ -1,0 +1,36 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER={{ project_name }}_user
+      - POSTGRES_PASSWORD={{ project_name }}_pass
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+
+  backend:
+    build: .
+    environment:
+      - DB_USER={{ project_name }}_user
+      - DB_PASSWORD={{ project_name }}_pass
+      - DB_HOST=db
+      - REDIS_PASSWORD=bny1t92v
+    depends_on:
+      - db
+    volumes:
+      - media:/opt/{{ project_name }}/media
+      - staticfiles:/opt/{{ project_name }}/staticfiles
+    links:
+      - redis
+
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - REDIS_PASSWORD=bny1t92v
+    ports:
+      - '6379:6379'
+
+volumes:
+  db-data:
+  media:
+  staticfiles:

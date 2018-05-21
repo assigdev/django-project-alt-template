@@ -1,0 +1,19 @@
+{% if page_obj.has_other_pages %}
+    <div class="row">
+        <div class="col-12">
+                {% if page_obj.has_previous %}
+                    <a class="badge badge-info" href="?page=1">&laquo;</a>
+                    <a class="badge badge-info" href="?page={{ page_obj.previous_page_number }}"><-</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a class="badge badge-info" href="?page={{ page_obj.next_page_number }}">-></a>
+                    <a class="badge badge-info" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+                {% endif %}
+        </div>
+    </div>
+{% endif %}

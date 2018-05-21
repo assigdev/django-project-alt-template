@@ -1,0 +1,30 @@
+{% load main_tags %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'main:home' %}"> {{ project_name }} </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+        <ul class="navbar-nav mr-auto">
+            {% url 'main:home' as url %}
+            <li class="nav-item ">
+                <a class="nav-link {% is_url_active url %}" href="{{ url }}">Home</a>
+            </li>
+            {% for page in pages %}
+                {% url 'main:page' page.slug as url %}
+                <li class="nav-item ">
+                    <a class="nav-link {% is_url_active url %}" href="{{ url }}">{{ page.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <ul class="navbar-nav">
+        </ul>
+
+    </div>
+</nav>

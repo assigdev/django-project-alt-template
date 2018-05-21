@@ -1,0 +1,36 @@
+{% load main_tags %}
+
+{% if form.errors %}
+    {% for field in form %}
+        <div class="form-group row">
+            <label for="{{ field.id_for_label }}" class="col-3 ">
+                {{ field.label }}:
+            </label>
+            {% if field.errors %}
+                {{ field|add_class:'form-control col-6 is-invalid'}}
+            {% else %}
+                {{ field|add_class:'form-control col-6 is-valid'}}
+            {% endif %}
+
+            {% for error in field.errors %}
+                <div class="invalid-feedback col-12">
+                    {{ error }}
+                </div>
+            {% endfor %}
+
+            {% if field.help_text %}
+                <small class="text-muted col-12">{{ field.help_text|safe }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    {% for field in form %}
+        <div class="form-group row">
+            <label for="{{ field.id_for_label }}" class="col-3">{{ field.label }}:</label>
+            {{ field|add_class:'form-control col-6'}}
+            {% if field.help_text %}
+                <small class="text-muted col-12">{{ field.help_text|safe }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endif %}

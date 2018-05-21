@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Site Map{% endblock %}
+
+
+
+{% block content %}
+    <h1>Site Map</h1>
+    <div>
+        <p><a href="{% url 'main:home' %}">Home</a></p>
+        {% for item in pages %}
+            <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
