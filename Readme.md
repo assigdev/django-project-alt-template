@@ -1,49 +1,36 @@
-# IT Course
+## Django Project Alt Template
 
-### Install:
-#### For production
+features:
 
-clone repository:
+    - Docker containars for dev and production
+    - Main app is flatpages like app for Menu Pages
+    - Bootsrap 4
+    - Start html temlates: base.html, header.html
+    - default include html template for bootsrap form
+    - include html template for messages contrib app
+    - add sitemaps and robots.txt
+    - makefile with automatization commands
+    - postgresql docker container
+    - redis for cache and sessions
+    - Sentry logs for production
+    - pipfile  
+    - django-extensions
+    - django-debug-toolbar for dev
 
-    $ git clone https://github.com/assigdev/it_courses
-    
-install docker and docker-compose for your OS.
+
+### Start:
 
 
+start project:
 
-Then up docker containers:
-  
-    $ cd it_courses b=1  # b=1 for building containers
-    $ make prod
+    $ django-admin.py startproject --template=https://github.com/assigdev/django-project-alt-template/archive/master.zip --name=Procfile project_name
 
-**if you run docker with sudo, run make with sudo**
-    
-    
-for configure (migrate, collectstatic and createsuperuser) in another terminal connection
-
-    $ make configure
-    
-
-for update collectstatic and migrations
-
-    $ make update
-
-for reload app
-
-    $ docker-compose stop
-    $ make prod
 
 #### For dev
 
-clone repository:
 
-    $ git clone https://github.com/assigdev/it_courses
-    
-install docker and docker-compose for your OS.
+Up docker containers:
 
-Then up docker containers:
-
-    $ cd it_courses
     $ make dev b=1
     
 
@@ -54,9 +41,10 @@ For next up, use
 **if you run docker with sudo, run make with sudo**
 
     
-for configure (migrate, collectstatic and createsuperuser) in another terminal connection
+for configure (migrate, collectstatic and createsuperuser) in another terminal session:
 
     $ make configure
+
 
 #### For dev with sqlite without docker containers(Not recommended
 )
@@ -67,13 +55,43 @@ clone repository:
     
 Then up django dev server:
 
-    $ cd it_courses
-    $ make dev_easy b=1
+    $ make dev_light b=1
     
 For next up use
     
-    $ make dev_easy
+    $ make dev_light
 
 other manage commands:
 
     $ pipenv run python manage.py *command*
+
+    
+#### Production:
+
+ - set domain_name in docker-compose.prod.yaml
+ - set sentry url in settings/prod.py
+ - up docker containers:
+  
+  
+     $ make prod b=1  # b=1 for building containers
+    
+    
+ - then configure (migrate, collectstatic and createsuperuser) in another terminal session
+
+    $ make configure
+
+
+
+
+
+for update collectstatic and migrations
+
+    $ make update
+
+for reload app
+
+    $ docker-compose down
+    $ make prod
+
+
+

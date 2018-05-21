@@ -2,7 +2,9 @@ version: '2'
 services:
   db:
     restart: always
+
   backend:
+    build: Dockerfile-prod
     command: uwsgi /opt/{{ project_name }}/uwsgi.ini
     restart: always
     environment:
@@ -14,6 +16,7 @@ services:
       - ALLOWED_HOSTS=SET_YOUR_DOMAIN
       - VIRTUAL_HOST=SET_YOUR_DOMAIN
       - IS_PRODUCTION=1
+
   nginx-proxy:
     restart: always
     image: jwilder/nginx-proxy
