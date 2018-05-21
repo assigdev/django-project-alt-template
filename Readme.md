@@ -38,7 +38,7 @@ For next up, use
 
     $ make dev
 
-**if you run docker with sudo, run make with sudo**
+*if you run docker with sudo, run make with sudo*
 
     
 for configure (migrate, collectstatic and createsuperuser) in another terminal session:
@@ -71,15 +71,15 @@ other manage commands:
  - set domain_name in docker-compose.prod.yaml
  - set sentry url in settings/prod.py
  - up docker containers:
-  
-  
-     $ make prod b=1  # b=1 for building containers
+
+ 
+        $ make prod b=1  # b=1 for building containers
     
     
  - then configure (migrate, collectstatic and createsuperuser) in another terminal session
 
-    $ make configure
 
+        $ make configure
 
 
 
