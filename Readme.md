@@ -31,7 +31,7 @@ start project:
 
 Up docker containers:
 
-    $ make dev b=1
+    $ make dev build=1
     
 
 For next up, use
@@ -53,7 +53,7 @@ for configure (migrate, collectstatic and createsuperuser) in another terminal s
     
 Up django dev server:
 
-    $ make dev_light b=1
+    $ make dev_light build=1
     
 For next up use
     
@@ -72,7 +72,7 @@ other manage commands:
 
 
  
-        $ make prod b=1  # b=1 for building containers
+        $ make prod build=1  # build=1 for building containers
     
 
     
