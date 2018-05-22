@@ -2,20 +2,20 @@
 
 features:
 
-    - Docker containars for dev and production
-    - Main app is flatpages like app for Menu Pages
-    - Bootsrap 4
-    - Start html temlates: base.html, header.html
-    - default include html template for bootsrap form
-    - include html template for messages contrib app
-    - add sitemaps and robots.txt
-    - makefile with automatization commands
-    - postgresql docker container
-    - redis for cache and sessions
-    - Sentry logs for production
-    - pipfile  
-    - django-extensions
-    - django-debug-toolbar for dev
+- Docker containars for dev and production
+- Main app is flatpages like app for Menu Pages
+- Bootsrap 4
+- Start html temlates: base.html, header.html
+- default include html template for bootsrap form
+- include html template for messages contrib app
+- add sitemaps and robots.txt
+- makefile with automatization commands
+- postgresql docker container
+- redis for cache and sessions
+- Sentry logs for production
+- pipfile  
+- django-extensions
+- django-debug-toolbar for dev
 
 
 ### Start:
@@ -38,7 +38,7 @@ For next up, use
 
     $ make dev
 
-*if you run docker with sudo, run make with sudo*
+_if you run docker with sudo, run make with sudo_
 
     
 for configure (migrate, collectstatic and createsuperuser) in another terminal session:
@@ -72,11 +72,14 @@ other manage commands:
  - set sentry url in settings/prod.py
  - up docker containers:
 
+
  
         $ make prod b=1  # b=1 for building containers
     
+
     
  - then configure (migrate, collectstatic and createsuperuser) in another terminal session
+
 
 
         $ make configure
