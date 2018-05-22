@@ -36,7 +36,7 @@ endif
 
 dev_light:
 ifeq ($(build), 1)
-	pip install pipenv && pipenv install --dev
+	pip install pipenv && pipenv install --dev --three
 	pipenv run python manage.py migrate
 	pipenv run python manage.py loaddata fixtures.json
 	pipenv run python manage.py createsuperuser
