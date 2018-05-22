@@ -1,6 +1,6 @@
 # Django Project Alt Template
 
-features:
+#### Features:
 
 - Docker containars for dev and production
 - Main app is flatpages like app for Menu Pages
@@ -49,11 +49,9 @@ for configure (migrate, collectstatic and createsuperuser) in another terminal s
 ### For dev with sqlite without docker containers(Not recommended
 )
 
-clone repository:
 
-    $ git clone https://github.com/assigdev/it_courses
     
-Then up django dev server:
+Up django dev server:
 
     $ make dev_light b=1
     
