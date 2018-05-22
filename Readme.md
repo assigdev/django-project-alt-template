@@ -1,4 +1,4 @@
-## Django Project Alt Template
+# Django Project Alt Template
 
 features:
 
@@ -26,7 +26,7 @@ start project:
     $ django-admin.py startproject --template=https://github.com/assigdev/django-project-alt-template/archive/master.zip --name=Procfile project_name
 
 
-#### For dev
+### For dev
 
 
 Up docker containers:
@@ -46,7 +46,7 @@ for configure (migrate, collectstatic and createsuperuser) in another terminal s
     $ make configure
 
 
-#### For dev with sqlite without docker containers(Not recommended
+### For dev with sqlite without docker containers(Not recommended
 )
 
 clone repository:
@@ -66,7 +66,7 @@ other manage commands:
     $ pipenv run python manage.py *command*
 
     
-#### Production:
+### Production:
 
  - set domain_name in docker-compose.prod.yaml
  - set sentry url in settings/prod.py
