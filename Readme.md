@@ -13,7 +13,7 @@ features:
 - postgresql docker container
 - redis for cache and sessions
 - Sentry logs for production
-- pipfile  
+- pipenv  
 - django-extensions
 - django-debug-toolbar for dev
 
