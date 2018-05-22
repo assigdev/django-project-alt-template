@@ -26,7 +26,7 @@ class Page(models.Model):
     meta_tags = models.TextField(max_length=400, blank=True)
     scripts = models.TextField(max_length=500, blank=True)
 
-    objects = PageManager
+    objects = PageManager()
 
     class Meta:
         ordering = ['sort', 'id']
