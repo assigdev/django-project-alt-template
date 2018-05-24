@@ -16,6 +16,7 @@
 - pipenv  
 - django-extensions
 - django-debug-toolbar for dev
+- alternative startapp command altstartapp
 
 
 ### Start:
@@ -95,4 +96,7 @@ for reload app
     $ make prod
 
 
+#### altstartapp command
 
+    
+    $ python manage.py altstartapp
