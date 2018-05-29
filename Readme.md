@@ -24,7 +24,7 @@
 
 start project:
 
-    $ django-admin.py startproject --template=https://github.com/assigdev/django-project-alt-template/archive/master.zip --name=Procfile project_name
+    $ django-admin.py startproject --template=https://github.com/assigdev/django-project-alt-template/archive/master.zip --name=Procfile --extension=py,yaml project_name
 
 
 ### For dev
